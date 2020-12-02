@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="msg" class="com.demo.spring.Message">
+		<constructor-arg value="LunchBreak" />
+		<constructor-arg value="Lunch at 2:00pm" />
+	</bean>
+
+
+	<bean id="msg1" class="com.demo.spring.Message">
+		<property name="header" value="Today LunchBreak" />
+		<property name="body" value="Lunch at 2:10pm" />
+	</bean>
+
+	<bean id="mail" class="com.demo.spring.Mail">
+		<property name="fromAddress" value="instructor" />
+		<property name="toAddress" value="all" />
+		<property name="message" ref="msg1" />
+
+	</bean>
+</beans>
