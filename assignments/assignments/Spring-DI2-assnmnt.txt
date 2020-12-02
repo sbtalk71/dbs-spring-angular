@@ -1,0 +1,21 @@
+Assignment for day1 class
+
+interface Writer{
+
+public void write(String message);
+
+}
+
+class WriterApp {
+
+Writer writer;
+
+public void print(String message){
+
+writer.write(message);
+
+}
+
+}
+
+create 2 implementations (PlainTextWriter, DecoratedWriter) of Writer interface and Test the WriterApp
