@@ -15,8 +15,8 @@ public class DaoMain {
 		
 		System.out.println(service.getClass().getName());
 		
-		System.out.println(service.register(100, "Pavan", "Hyderabad", 80000));
-		service.deRegisterEmp();
+		//System.out.println(service.register(100, "Pavan", "Hyderabad", 80000));
+		service.deRegisterEmp(2);
 
 	}
 

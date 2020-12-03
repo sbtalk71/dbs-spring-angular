@@ -12,21 +12,23 @@ public class EmpService {
 
 	@Autowired
 	private EmpDao dao;
-	
-	//@Autowired
-	//private AppAuditLogger logger;
-	
+
+	// @Autowired
+	// private AppAuditLogger logger;
+
 	public String register(int id, String name, String city, double sal) {
-		//logger.logBefore();
+		// logger.logBefore();
 		String response = dao.save(new Emp(id, name, city, sal));
-		///logger.logAfter();
+		/// logger.logAfter();
 		return response;
 	}
-	
-	
-	public void deRegisterEmp() {
-		System.out.println("Emp De registered...");
+
+	public void deRegisterEmp(int id) {
+		if (id > 1) {
+			System.out.println("Emp De registered...");
+		} else {
+			throw new RuntimeException("Id Cannot be less than 1");
+		}
 	}
-	
-	
+
 }
