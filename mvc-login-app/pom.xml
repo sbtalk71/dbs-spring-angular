@@ -30,4 +30,7 @@
 			<version>5.2.11.RELEASE</version>
 		</dependency>
 	</dependencies>
+	<build>
+	<finalName>loginapp</finalName>
+	</build>
 </project>

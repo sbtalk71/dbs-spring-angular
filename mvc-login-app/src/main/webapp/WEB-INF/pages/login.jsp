@@ -9,7 +9,7 @@
 <body>
 <h1>Login page</h1>
 <hr>
-<form action="login" method="post">
+<form action="process_login" method="post">
 User Name:<input type="text" name="username"><br/>
 User Name:<input type="text" name="password"><br/>
 <input type="submit" value="Login"><br/>

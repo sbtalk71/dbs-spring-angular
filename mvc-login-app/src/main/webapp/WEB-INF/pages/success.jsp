@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Login Success</h1>
+<h1>Login Success for ${loggedInUser}</h1>
+<a href="login">Go To Login page</a>
+<a href="register">Employee Registration Page</a>
 </body>
 </html>
