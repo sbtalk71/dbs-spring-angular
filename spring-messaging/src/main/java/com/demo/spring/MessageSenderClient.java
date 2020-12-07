@@ -17,6 +17,7 @@ public class MessageSenderClient {
 		ConfigurableApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 		JmsTemplate jmsTemplate = ctx.getBean(JmsTemplate.class);
 
+		
 		jmsTemplate.send(new MessageCreator() {
 
 			public Message createMessage(Session session) throws JMSException {
