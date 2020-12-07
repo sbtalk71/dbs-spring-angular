@@ -1,15 +1,24 @@
 package com.demo.hibernate.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="EMP")
 public class Emp {
 	@Id
+	@GeneratedValue(strategy =GenerationType.AUTO )
 	@Column(name="EMPNO")
 	private int empId;
 	
@@ -22,15 +31,23 @@ public class Emp {
 	@Column(name="SALARY")
 	private double salary;
 	
-	@Embedded
-	Address address;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="EMPNO")
+	Set<Address> addresses=new HashSet<>();
 	
-	public Emp() {
-		
-	}
+	
+	  public Emp() {
+	  
+	  }
+	 
 
 	public Emp(int empId, String empName, String city, double salary) {
 		this.empId = empId;
+		this.empName = empName;
+		this.city = city;
+		this.salary = salary;
+	}
+	public Emp(String empName, String city, double salary) {
 		this.empName = empName;
 		this.city = city;
 		this.salary = salary;
@@ -68,12 +85,12 @@ public class Emp {
 		this.salary = salary;
 	}
 
-	public Address getAddress() {
-		return address;
+	public Set<Address> getAddress() {
+		return addresses;
 	}
 
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setAddress(Set<Address> addresses) {
+		this.addresses = addresses;
 	}
 	
 	

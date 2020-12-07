@@ -1,10 +1,12 @@
-package com.demo.hibernate.entity;
+package com.demo.hibernate;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+
+import com.demo.hibernate.entity.Emp;
 
 public class HibernateClientApp {
 
@@ -15,9 +17,9 @@ public class HibernateClientApp {
 		Session session = sf.openSession();
 		Transaction tx = session.beginTransaction();
 		try {
-			Emp emp = new Emp(110, "Ankit", "Bangalore", 67000);
+			Emp emp = new Emp(111, "Ankit", "Bangalore", 67000);
 			
-			session.save(emp);
+			session.persist(emp);
 			
 			tx.commit();
 		} catch (HibernateException e) {

@@ -10,11 +10,11 @@
 		<property name="hibernate.connection.password">root</property>
 		
 		<property name="hibernate.dialect">org.hibernate.dialect.MariaDB10Dialect</property>
-		
 		<property name="show_sql">true</property>
-		<!-- <property name="hibernate.hbm2ddl.auto">update</property>
-		 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		 
 		<mapping class="com.demo.hibernate.entity.Emp" />
+		<mapping class="com.demo.hibernate.entity.Address" />
 		<!-- <mapping package="com.demo.hibernate.entity.*" /> -->
 	</session-factory>
 
