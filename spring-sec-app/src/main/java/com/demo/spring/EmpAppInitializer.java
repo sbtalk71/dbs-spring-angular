@@ -7,7 +7,7 @@ public class EmpAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		
-		return null;
+		return new Class[] {EmpAppSecurityConfig.class};
 	}
 
 	@Override

@@ -33,5 +33,6 @@
 		</table>
 
 	</form>
+	<a href="logout">Logout</a>
 </body>
 </html>
