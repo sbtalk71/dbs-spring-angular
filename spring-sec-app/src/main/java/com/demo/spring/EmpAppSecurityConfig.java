@@ -36,6 +36,8 @@ public class EmpAppSecurityConfig extends WebSecurityConfigurerAdapter{
 		.hasAnyRole("USER","CLIENT")
 		.and()
 		.formLogin()
+		.loginPage("/login")
+		.failureUrl("/error")
 		.and().logout()
 		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 		.and()
