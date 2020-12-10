@@ -8,6 +8,7 @@ public class SpringMain {
 	public static void main(String[] args) {
 
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("context.xml");
+		
 
 		
 		  Message message = (Message) ctx.getBean("msg1");
