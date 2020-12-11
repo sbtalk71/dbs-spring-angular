@@ -17,6 +17,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 @Configuration
 @ComponentScan(basePackages = "com.demo")
 @EnableJpaRepositories(basePackages = "com.demo.spring.repo")
+
 public class JpaConfig {
 
 	@Bean
