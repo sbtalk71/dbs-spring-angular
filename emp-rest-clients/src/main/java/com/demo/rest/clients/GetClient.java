@@ -27,7 +27,7 @@ public class GetClient {
 	//	System.out.println(headers);
 		HttpHeaders headers=new HttpHeaders();
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
-		headers.add("Authorization", "Basic "+encryptedCreds);
+		//headers.add("Authorization", "Basic "+encryptedCreds);
 		
 		
 		

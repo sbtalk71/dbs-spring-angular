@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.logging.Logger;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -58,7 +60,7 @@ public class EmpRestController {
 	}
 	
 	@PostMapping(path="/emp/save",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity save(@RequestBody Emp e) {
+	public ResponseEntity save(@Valid @RequestBody Emp e) {
 		
 		if(repo.existsById(e.getEmpid())) {
 			ResponseMessage message=new ResponseMessage(000,"EMP with the Given ID already exists");

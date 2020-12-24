@@ -23,13 +23,13 @@ public class PostClient {
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add("Content-Type", MediaType.APPLICATION_JSON_VALUE);
 		
-		Emp emp=new Emp(400, "Vinod", "Noida", 45000);
+		Emp emp=new Emp(400, "Vin", "Noida", 45000);
 		
 		HttpEntity req=new HttpEntity<>(emp,headers);
 		
-		ResponseEntity<String> response=rt.exchange("http://localhost:8080/emp-rest-service/emp/save", HttpMethod.POST, req, String.class);
+		ResponseEntity<String> response=rt.exchange("http://localhost:8181/emp/save", HttpMethod.POST, req, String.class);
 		
-		System.out.println(response.getBody()+" Status Code "+response.getStatusCodeValue());
+		System.out.println(response.getBody());
 	}
 
 }
